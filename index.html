@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>毕设档案 · 艺术设计系优秀毕业作品</title>
+<style>
+:root{
+  --bg:#FAF8F5; --surface:#FFFFFF; --surface-2:#F5F1EA;
+  --ink:#1B1A18; --ink2:#6B665E; --ink3:#9C958A;
+  --line:#EAE4DA; --line2:#F0EBE3;
+  --accent:#A9764A; --accent-soft:#F4EBE0; --accent-ink:#8A5E38;
+  --love:#C4544B; --love-soft:#FBEDEB;
+  --teal:#4A8B8C; --teal-soft:#E6F2F2;
+  --purple:#7A6B9D; --purple-soft:#EFEDF5;
+  --radius:14px;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --serif:"Songti SC","STSong","Noto Serif SC","Source Han Serif SC","SimSun",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:14px;line-height:1.75;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--accent-soft)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+
+header{position:sticky;top:0;z-index:60;background:rgba(250,248,245,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:20px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:17px;letter-spacing:.04em;white-space:nowrap}
+.brand small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.18em;color:var(--ink3);text-transform:uppercase}
+.nav-tabs{display:flex;gap:3px}
+.nav-tabs button{padding:7px 12px;border-radius:99px;font-size:13px;color:var(--ink2);transition:.18s;display:flex;align-items:center;gap:6px}
+.nav-tabs button:hover{background:var(--surface-2);color:var(--ink)}
+.nav-tabs button.on{background:var(--ink);color:#fff}
+.nav-tabs button .n{font-size:11px;opacity:.6}
+.nav-right{margin-left:auto;display:flex;align-items:center;gap:12px}
+.search{display:flex;align-items:center;gap:9px;background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:0 14px;height:38px;width:252px;transition:.2s}
+.search:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px rgba(169,118,74,.09)}
+.search input{flex:1;border:none;outline:none;background:none;font-size:13.5px;min-width:0}
+.search input::placeholder{color:var(--ink3)}
+.kbd{font-size:10.5px;color:var(--ink3);border:1px solid var(--line);border-radius:5px;padding:1px 5px}
+
+.hero{padding:60px 0 36px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end}
+.hero h1{font-family:var(--serif);font-size:42px;line-height:1.26;font-weight:600}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{color:var(--ink2);max-width:580px;margin-top:16px;font-size:14.5px}
+.stats{display:flex;gap:32px}
+.stat b{display:block;font-family:var(--serif);font-size:29px;line-height:1.1;font-weight:600}
+.stat span{font-size:11.5px;color:var(--ink3);letter-spacing:.1em}
+
+.carousel{position:relative;height:450px;border-radius:20px;overflow:hidden;background:var(--surface-2);border:1px solid var(--line)}
+.cs-slide{position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity 1.1s ease}
+.cs-slide.on{opacity:1;pointer-events:auto}
+.cs-slide img{width:100%;height:100%;object-fit:cover}
+.cs-veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(20,18,16,.74) 0%,rgba(20,18,16,.3) 38%,rgba(20,18,16,0) 68%)}
+.cs-info{position:absolute;left:40px;right:40px;bottom:36px;color:#fff;max-width:640px;cursor:pointer}
+.cs-tag{display:inline-block;font-size:11px;letter-spacing:.14em;padding:4px 11px;border:1px solid rgba(255,255,255,.44);border-radius:99px;margin-bottom:13px}
+.cs-info h3{font-family:var(--serif);font-size:27px;font-weight:600;line-height:1.3;margin-bottom:8px}
+.cs-info p{font-size:13.5px;color:rgba(255,255,255,.84);line-height:1.7;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.cs-info .by{font-size:12px;color:rgba(255,255,255,.64);margin-top:9px}
+.cs-dots{position:absolute;right:34px;bottom:40px;display:flex;gap:7px;z-index:3}
+.cs-dots button{width:26px;height:3px;border-radius:99px;background:rgba(255,255,255,.35);transition:.3s}
+.cs-dots button.on{background:#fff;width:40px}
+.cs-badge{position:absolute;top:22px;left:26px;z-index:3;font-size:11px;letter-spacing:.16em;color:#fff;background:rgba(27,26,24,.42);backdrop-filter:blur(6px);padding:5px 12px;border-radius:99px}
+
+.sec{padding:52px 0}
+.sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:24px}
+.sec-head h2{font-family:var(--serif);font-size:23px;font-weight:600}
+.sec-head span{font-size:12px;color:var(--ink3);letter-spacing:.06em}
+.sec-head .more{margin-left:auto;font-size:12.5px;color:var(--accent-ink)}
+.entries{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.entry{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px 20px;transition:.22s;text-align:left}
+.entry:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 10px 28px -14px rgba(60,45,30,.28)}
+.entry .ic{width:38px;height:38px;border-radius:11px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;margin-bottom:14px;color:var(--accent-ink)}
+.entry h4{font-size:14.5px;font-weight:600;margin-bottom:5px}
+.entry p{font-size:12.5px;color:var(--ink2);line-height:1.65}
+
+.filters{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;margin-bottom:24px}
+.frow{display:flex;gap:14px;align-items:flex-start;padding:9px 0;border-bottom:1px dashed var(--line2)}
+.frow:last-child{border-bottom:none}
+.frow>label{flex:none;width:74px;font-size:12px;color:var(--ink3);letter-spacing:.08em;padding-top:5px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{padding:5px 13px;border-radius:99px;border:1px solid var(--line);font-size:12.5px;color:var(--ink2);transition:.16s;background:var(--surface)}
+.chip:hover{border-color:var(--accent);color:var(--accent-ink)}
+.chip.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.chip i{font-style:normal;color:var(--ink3);font-size:11px;margin-left:5px}
+.chip.on i{color:rgba(255,255,255,.55)}
+.fbar-top{display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.fbar-top h3{font-family:var(--serif);font-size:17px;font-weight:600}
+.fbar-top .cnt{font-size:12px;color:var(--ink3)}
+.fbar-top .reset{margin-left:auto;font-size:12.5px;color:var(--accent-ink)}
+.fbar-top .trash-toggle{font-size:12.5px;color:var(--ink2)}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.24s;cursor:pointer;display:flex;flex-direction:column;position:relative}
+.card:hover{border-color:#DED5C8;transform:translateY(-4px);box-shadow:0 16px 40px -18px rgba(60,45,30,.34)}
+.card .ph{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--surface-2)}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.3,1)}
+.card:hover .ph img{transform:scale(1.05)}
+.card .yr{position:absolute;left:10px;top:10px;font-size:11px;color:#fff;background:rgba(27,26,24,.46);backdrop-filter:blur(5px);padding:2px 9px;border-radius:99px;letter-spacing:.04em}
+.card .nimg{position:absolute;right:10px;bottom:10px;font-size:11px;color:#fff;background:rgba(27,26,24,.46);backdrop-filter:blur(5px);padding:2px 9px;border-radius:99px}
+.card .acts{position:absolute;right:10px;top:10px;display:flex;gap:6px;opacity:0;transition:.18s}
+.card:hover .acts{opacity:1}
+.fav,.del{width:32px;height:32px;border-radius:99px;background:rgba(255,255,255,.9);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;transition:.18s;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.fav:hover,.del:hover{transform:scale(1.1)}
+.fav.on{background:#fff}
+.fav svg,.del svg{transition:.18s}
+.del{color:#8a5e5e}
+.del:hover{background:#FBEDEB;color:var(--love)}
+.card .bd{padding:17px 20px 19px;display:flex;flex-direction:column;flex:1}
+.card .tp{font-size:11px;letter-spacing:.1em;color:var(--accent-ink);margin-bottom:8px;display:flex;gap:8px;align-items:center}
+.card .tp .dot{color:var(--line)}
+.card h3{font-family:var(--serif);font-size:17px;font-weight:600;line-height:1.42;margin-bottom:9px}
+.card .hl{font-size:12.8px;color:var(--ink2);line-height:1.72;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:13px}
+.card .mt{margin-top:auto;display:flex;justify-content:space-between;align-items:center;font-size:11.5px;color:var(--ink3);border-top:1px solid var(--line2);padding-top:11px}
+.card .mt b{font-weight:500;color:var(--ink2)}
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:11px}
+.tag{font-size:11px;padding:3px 9px;border-radius:6px;background:var(--surface-2);color:var(--ink2)}
+.subhead{display:flex;align-items:center;gap:10px;margin:34px 0 18px;font-family:var(--serif);font-size:18px;font-weight:600}
+.subhead .ln{flex:1;height:1px;background:var(--line)}
+
+.group{margin-bottom:42px}
+.group-h{display:flex;align-items:baseline;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--line);margin-bottom:20px}
+.group-h h3{font-family:var(--serif);font-size:20px;font-weight:600;display:flex;align-items:center;gap:9px}
+.group-h .n{font-size:12px;color:var(--ink3)}
+.group-h .sub{margin-left:auto;font-size:12.5px;color:var(--ink2);max-width:50%;text-align:right;line-height:1.6}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:100;background:var(--bg);overflow-y:auto;display:none}
+.modal.on{display:block;animation:fade .26s ease}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.mtop{position:sticky;top:0;z-index:20;background:rgba(250,248,245,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.mtop-in{display:flex;align-items:center;gap:12px;height:60px;max-width:1240px;margin:0 auto;padding:0 32px}
+.back-btn{display:flex;align-items:center;gap:8px;padding:8px 16px 8px 12px;border-radius:99px;border:1px solid var(--line);background:var(--surface);font-size:13px;transition:.16s;flex:none}
+.back-btn:hover{border-color:var(--accent);color:var(--accent-ink);background:var(--accent-soft)}
+.mtop-in .t{font-size:13px;color:var(--ink2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mtop-in .r{margin-left:auto;display:flex;gap:8px;flex:none}
+.iconbtn{width:36px;height:36px;border-radius:99px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;transition:.16s;background:var(--surface)}
+.iconbtn:hover{border-color:var(--accent);color:var(--accent-ink)}
+.iconbtn.on{background:var(--love-soft);border-color:var(--love);color:var(--love)}
+.iconbtn.del{color:#8a5e5e}
+.iconbtn.del:hover{background:#FBEDEB;border-color:var(--love);color:var(--love)}
+.mbody{max-width:1240px;margin:0 auto;padding:30px 32px 90px;display:grid;grid-template-columns:1.12fr .88fr;gap:42px;align-items:start}
+.stage{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:var(--surface-2);position:relative;cursor:zoom-in}
+.stage img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.stage .zoom{position:absolute;right:12px;top:12px;font-size:11.5px;color:#fff;background:rgba(27,26,24,.5);backdrop-filter:blur(5px);padding:4px 11px;border-radius:99px;opacity:0;transition:.2s;display:flex;align-items:center;gap:5px}
+.stage:hover .zoom{opacity:1}
+.stage .arw{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:99px;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.12);transition:.18s}
+.stage .arw:hover{background:#fff;transform:translateY(-50%) scale(1.06)}
+.stage .arw.l{left:14px}.stage .arw.r{right:14px}
+.stage .cnt{position:absolute;right:14px;bottom:14px;font-size:11.5px;color:#fff;background:rgba(27,26,24,.5);backdrop-filter:blur(5px);padding:3px 11px;border-radius:99px}
+.strips{display:flex;gap:9px;margin-top:11px;overflow-x:auto;padding-bottom:3px}
+.strips img{width:96px;height:60px;object-fit:cover;border-radius:8px;border:2px solid transparent;opacity:.55;transition:.18s;flex:none;cursor:pointer}
+.strips img:hover{opacity:.85}
+.strips img.on{opacity:1;border-color:var(--accent)}
+.dlrow{display:flex;gap:9px;margin-top:12px}
+.dlbtn{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:11px;border-radius:10px;border:1px solid var(--line);background:var(--surface);font-size:13px;transition:.16s}
+.dlbtn:hover{border-color:var(--accent);color:var(--accent-ink);background:var(--accent-soft)}
+.dlbtn.vid{border-color:#E0BDB9;color:#B0483F;background:#FDF4F2}
+.dlbtn.vid:hover{background:#FBE9E6;border-color:#C4544B}
+.vidtag{position:absolute;right:10px;top:52px;font-size:11px;color:#fff;background:rgba(180,72,63,.82);backdrop-filter:blur(5px);padding:2px 9px;border-radius:99px;display:flex;align-items:center;gap:4px}
+
+.dtitle{font-family:var(--serif);font-size:29px;line-height:1.34;font-weight:600;margin-bottom:13px}
+.dmeta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.dmeta span{font-size:11.5px;padding:4px 11px;border-radius:99px;background:var(--accent-soft);color:var(--accent-ink)}
+.dmeta span.gray{background:var(--surface-2);color:var(--ink2)}
+.hlbox{background:linear-gradient(135deg,#FFF9F0 0%,#FBF3E8 100%);border:1px solid #EDDFC9;border-radius:var(--radius);padding:18px 20px;margin-bottom:22px}
+.hlbox .lbl{display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.14em;color:var(--accent-ink);margin-bottom:9px}
+.hlbox p{font-family:var(--serif);font-size:15.5px;line-height:1.8;color:#4A3A28}
+.blk{margin-bottom:22px}
+.blk-h{display:flex;align-items:center;gap:9px;margin-bottom:11px}
+.blk-h .ic{width:26px;height:26px;border-radius:8px;background:var(--accent-soft);color:var(--accent-ink);display:flex;align-items:center;justify-content:center;flex:none}
+.blk-h h4{font-size:14px;font-weight:600}
+.blk p{font-size:13.2px;color:var(--ink2);line-height:1.85}
+.concept{font-family:var(--serif);font-size:16px;line-height:1.8;color:var(--ink);border-left:3px solid var(--accent);padding:3px 0 3px 15px}
+table.sym{width:100%;border-collapse:collapse;font-size:12.8px}
+table.sym th{text-align:left;font-weight:500;color:var(--ink3);font-size:11px;letter-spacing:.1em;padding:0 10px 9px 0;border-bottom:1px solid var(--line)}
+table.sym td{padding:10px 10px 10px 0;border-bottom:1px solid var(--line2);vertical-align:top;color:var(--ink2);line-height:1.7}
+table.sym td:first-child{color:var(--ink);font-weight:500}
+table.sym tr:last-child td{border-bottom:none}
+.narr-list{list-style:none;font-size:13px}
+.narr-list li{padding:9px 0;border-bottom:1px solid var(--line2);display:flex;gap:12px}
+.narr-list li:last-child{border-bottom:none}
+.narr-list b{flex:none;width:52px;font-weight:500;color:var(--accent-ink);font-size:12px;padding-top:1px}
+.narr-list span{color:var(--ink2);line-height:1.8}
+.pill-wrap{display:flex;flex-wrap:wrap;gap:7px}
+.pill{font-size:12px;padding:5px 12px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--ink2);transition:.16s}
+.pill:hover{border-color:var(--accent);color:var(--accent-ink);background:var(--accent-soft)}
+.desc-box{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px}
+.desc-box .lbl{font-size:11px;letter-spacing:.14em;color:var(--ink3);margin-bottom:9px}
+.desc-box p{font-size:13.2px;color:var(--ink2);line-height:1.85}
+.trash-banner{font-size:13px;padding:12px 16px;border-radius:var(--radius);background:#FBEDEB;color:#8A453F;border:1px solid #EACBC7;margin-bottom:18px;display:flex;align-items:center;gap:10px}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:200;background:rgba(18,16,14,.96);display:none;flex-direction:column}
+.lb.on{display:flex;animation:fade .2s}
+.lb-top{display:flex;align-items:center;gap:12px;padding:16px 24px;color:#fff;flex:none}
+.lb-top .t{font-size:13px;color:rgba(255,255,255,.72);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lb-top .r{margin-left:auto;display:flex;gap:10px;flex:none}
+.lb-btn{display:flex;align-items:center;gap:7px;padding:8px 16px;border-radius:99px;border:1px solid rgba(255,255,255,.28);color:#fff;font-size:13px;transition:.16s}
+.lb-btn:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.5)}
+.lb-stage{flex:1;display:flex;align-items:center;justify-content:center;padding:0 70px;position:relative;min-height:0}
+.lb-stage img{max-width:100%;max-height:100%;object-fit:contain;border-radius:6px}
+.lb-arw{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:99px;background:rgba(255,255,255,.12);color:#fff;display:flex;align-items:center;justify-content:center;transition:.16s}
+.lb-arw:hover{background:rgba(255,255,255,.24)}
+.lb-arw.l{left:16px}.lb-arw.r{right:16px}
+.lb-bottom{flex:none;padding:14px 24px 22px;display:flex;gap:8px;justify-content:center;overflow-x:auto}
+.lb-bottom img{width:74px;height:48px;object-fit:cover;border-radius:6px;opacity:.45;cursor:pointer;flex:none;border:2px solid transparent}
+.lb-bottom img:hover{opacity:.8}
+.lb-bottom img.on{opacity:1;border-color:#fff}
+
+/* knowledge / charts */
+.know{padding:42px 0 90px}
+.know-h{font-family:var(--serif);font-size:28px;font-weight:600;margin-bottom:8px}
+.know-sub{color:var(--ink2);margin-bottom:32px;max-width:760px}
+.know-sec{margin-bottom:42px}
+.know-sec h3{font-family:var(--serif);font-size:20px;font-weight:600;margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.know-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:36px}
+.kcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.kcard b{display:block;font-family:var(--serif);font-size:32px;color:var(--accent);margin-bottom:6px}
+.kcard span{font-size:12px;color:var(--ink2);letter-spacing:.06em}
+.bar-chart{display:grid;gap:10px}
+.bar{display:flex;align-items:center;gap:12px;font-size:12.5px}
+.bar .l{flex:none;width:110px;text-align:right;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar-track{flex:1;height:14px;background:var(--surface-2);border-radius:99px;overflow:hidden}
+.bar-fill{height:100%;background:var(--accent);border-radius:99px;transition:width .6s ease}
+.bar .n{flex:none;width:34px;color:var(--ink3);font-size:12px}
+.bar.teacher .l{width:90px}
+.bar.teacher .bar-fill{background:var(--purple)}
+.template-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;margin-bottom:14px}
+.template-card h4{font-family:var(--serif);font-size:17px;font-weight:600;margin-bottom:4px}
+.template-card .tm{font-size:12px;color:var(--ink3);margin-bottom:12px}
+.template-card .formula{font-size:13px;color:var(--accent-ink);background:var(--accent-soft);display:inline-block;padding:6px 12px;border-radius:99px;margin-bottom:12px}
+.template-card p{font-size:12.8px;color:var(--ink2);line-height:1.85;margin-bottom:8px}
+.template-card .ex{color:var(--ink3);font-size:12px;border-top:1px dashed var(--line2);padding-top:10px;margin-top:12px}
+.taxonomy{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.tax-box{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.tax-box h4{font-size:14px;font-weight:600;margin-bottom:10px;color:var(--ink)}
+.tax-box .tag{display:inline-block;font-size:12px;padding:4px 10px;border-radius:99px;background:var(--surface-2);color:var(--ink2);margin:0 6px 6px 0}
+.tax-box .tag b{color:var(--accent-ink);font-weight:500}
+.empty{text-align:center;padding:80px 0;color:var(--ink3)}
+footer{border-top:1px solid var(--line);padding:34px 0 56px;color:var(--ink3);font-size:12px;line-height:1.9}
+footer b{color:var(--ink2);font-weight:500}
+@media(max-width:1060px){.mbody{grid-template-columns:1fr;gap:30px}.grid,.entries{grid-template-columns:repeat(2,1fr)}.hero{grid-template-columns:1fr}.know-grid,.taxonomy{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:720px){
+.wrap,.mtop-in,.mbody{padding-left:16px;padding-right:16px}
+.mbody{padding-top:18px;padding-bottom:70px;gap:26px}
+.grid,.entries{grid-template-columns:1fr}
+.hero h1{font-size:29px}
+.carousel{height:300px}
+/* 导航不藏了：横向滚动 */
+header .nav{gap:10px;height:auto;min-height:56px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+.brand{font-size:15px}
+.brand small{display:none}
+.nav-tabs{display:flex;overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch;scrollbar-width:none;order:3;flex-basis:100%}
+.nav-tabs::-webkit-scrollbar{display:none}
+.nav-tabs button{padding:6px 11px;font-size:12.5px;white-space:nowrap;flex:none}
+.search{flex:1;width:auto;min-width:0;height:36px}
+.nav-right{width:100%;order:2;flex-wrap:wrap}
+.bk-btn{margin-left:0;flex:none}
+.mtop-in{height:auto;flex-wrap:wrap;align-items:flex-start;padding-top:8px;padding-bottom:8px;gap:8px}
+.back-btn{padding:7px 12px 7px 9px;font-size:12.5px}
+.mtop-in .t{flex:1 1 100%;order:1;font-size:12.5px;padding-top:2px}
+.mtop-in .r{order:2;flex:1 1 100%;margin-left:0;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.mtop-in .r::-webkit-scrollbar{display:none}
+.iconbtn{width:32px;height:32px}
+.stage{cursor:default}
+.stage img{aspect-ratio:4/3}
+.stage .arw{width:34px;height:34px}
+.stage .zoom{opacity:.9}
+.lb-stage{padding:0 10px}
+.lb-bar{gap:8px;padding:10px 12px}
+.know-grid,.taxonomy{grid-template-columns:1fr}
+.bar .l{width:86px;font-size:11.5px}
+.bar .n{width:30px}
+.dtitle{font-size:22px !important}
+.chips{gap:6px}
+.chips button{padding:5px 11px;font-size:12px}
+.blk-h h4{font-size:14px}
+.modal{overflow-x:hidden}
+.mbody{max-width:100%}
+.sym td,.sym th{word-break:break-word}
+.stage img,.lb-stage img{max-width:100%}
+}
+.bk-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;flex:none;white-space:nowrap;flex-direction:row;margin-left:12px;padding:8px 15px;border-radius:11px;border:1px solid var(--accent);background:var(--accent);color:#fff;font-size:13.5px;font-weight:600;cursor:pointer;transition:.2s;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.bk-btn:hover{filter:brightness(1.07);box-shadow:0 5px 16px rgba(0,0,0,.15)}
+.bk-btn svg{stroke:#fff;flex:none}
+.bk-wrap{max-width:720px;margin:6vh auto;padding:0 22px 40px}
+.bk-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px 26px;margin-bottom:20px;box-shadow:0 8px 30px rgba(0,0,0,.05)}
+.bk-card h2{font-family:var(--serif);font-size:20px;margin:0 0 4px;display:flex;align-items:center;gap:9px}
+.bk-card .sub{color:var(--ink3);font-size:13px;margin:0 0 16px}
+.bk-sec{border-top:1px dashed var(--line);padding-top:16px;margin-top:16px}
+.bk-sec:first-of-type{border-top:none;padding-top:0;margin-top:0}
+.bk-sec h3{font-size:14px;margin:0 0 10px;color:var(--ink2);display:flex;align-items:center;gap:7px}
+.bk-ta{width:100%;height:150px;resize:vertical;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;line-height:1.5;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);box-sizing:border-box}
+.bk-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.bk-row.row2{margin-top:14px}
+.bk-act{padding:9px 15px;border-radius:10px;border:1px solid var(--accent);background:var(--accent);color:#fff;font-size:13px;font-weight:600;cursor:pointer;transition:.2s}
+.bk-act:hover{opacity:.9}
+.bk-act.ghost{background:transparent;color:var(--accent)}
+.bk-act.soft{background:var(--surface-2);border-color:var(--line);color:var(--ink)}
+.bk-hint{font-size:12.5px;color:var(--ink3);line-height:1.7;margin:10px 0 0}
+.bk-file{font-size:13px;color:var(--ink2)}
+.bk-stat{display:inline-flex;gap:6px;align-items:center;font-size:12.5px;color:var(--teal);background:var(--teal-soft);padding:5px 11px;border-radius:99px;margin-bottom:14px}
+
+/* ===== 筛选区重设计 ===== */
+.filters{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:15px 18px;margin-bottom:24px}
+.fbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.ft{display:inline-flex;align-items:center;gap:7px;font-family:var(--serif);font-size:16px;font-weight:600;color:var(--ink);padding:4px 2px;cursor:pointer}
+.ft .chev{display:inline-flex;transition:transform .25s ease;color:var(--ink3)}
+.filters.expanded .ft .chev{transform:rotate(180deg)}
+.fmode{display:inline-flex;align-items:center;gap:0;border:1px solid var(--line);border-radius:99px;overflow:hidden;background:var(--surface-2)}
+.fmode .lab{font-size:11px;color:var(--ink3);padding:0 8px 0 4px;white-space:nowrap}
+.fmode button{padding:5px 13px;font-size:12px;color:var(--ink2);transition:.16s;white-space:nowrap}
+.fmode button.on{background:var(--ink);color:#fff}
+.fcnt{font-size:12px;color:var(--ink3);margin-left:auto}
+.freset{font-size:12.5px;color:var(--accent-ink);white-space:nowrap}
+.freset2{display:block;width:100%;text-align:center;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--surface-2);margin-top:14px}
+.factive-strip{display:flex;align-items:center;gap:7px;margin-top:12px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:3px;-ms-overflow-style:none}
+.factive-strip::-webkit-scrollbar{display:none}
+.factive-strip .hint{font-size:12.5px;color:var(--ink3);white-space:nowrap}
+.ochip{flex:none;display:inline-flex;align-items:center;gap:6px;padding:5px 6px 5px 13px;border-radius:99px;background:var(--accent-soft);color:var(--accent-ink);font-size:12.5px;white-space:nowrap;cursor:pointer}
+.ochip b{font-weight:600}
+.ochip .x{display:inline-flex;width:17px;height:17px;border-radius:99px;background:rgba(138,94,56,.18);align-items:center;justify-content:center;color:var(--accent-ink)}
+.ochip .x svg{stroke:var(--accent-ink)}
+.fpanel{margin-top:14px}
+.fgroup{padding:11px 0;border-top:1px dashed var(--line2)}
+.fgroup:first-child{border-top:none;padding-top:2px}
+.gl{font-size:11.5px;letter-spacing:.08em;color:var(--ink3);margin-bottom:9px;display:flex;align-items:center;gap:8px}
+.gl .n{color:var(--ink3);opacity:.65}
+.fchips{display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:5px;-ms-overflow-style:none}
+.fchips::-webkit-scrollbar{display:none}
+.fchips .chip{flex:none;white-space:nowrap}
+.filters:not(.expanded) .fpanel{display:none}
+@media(min-width:721px){ .filters.expanded .fpanel{display:block} .fmask{display:none!important} }
+@media(max-width:720px){
+  .fmask{position:fixed;inset:0;background:rgba(20,18,16,.45);z-index:198;display:none}
+  .filters.expanded .fmask{display:block}
+  .fpanel{position:fixed;left:0;right:0;bottom:0;max-height:82vh;overflow-y:auto;-webkit-overflow-scrolling:touch;background:var(--surface);border-radius:18px 18px 0 0;padding:16px 16px calc(20px + env(safe-area-inset-bottom));box-shadow:0 -10px 40px rgba(0,0,0,.2);transform:translateY(102%);transition:transform .3s cubic-bezier(.2,.7,.3,1);z-index:200;margin-top:0}
+  .filters.expanded .fpanel{transform:translateY(0)}
+  .fpanel::before{content:"";display:block;width:40px;height:4px;border-radius:99px;background:var(--line);margin:0 auto 14px}
+  .fgroup:first-child{border-top:1px dashed var(--line2);padding-top:11px}
+  .fcnt{margin-left:0}
+  .fbar{gap:8px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent)"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 1 6.5 18H19v3H6.5A2.5 2.5 0 0 1 4 20.5z"/><path d="M9 7.5h6"/></svg>
+      <div>毕设档案<small>Graduation Archive</small></div>
+    </div>
+    <div class="nav-tabs" id="tabs"></div>
+    <div class="nav-right">
+      <div class="search">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" style="color:var(--ink3)"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" placeholder="搜索作品 / 作者 / 导师 / 符号…">
+        <span class="kbd">/</span>
+      </div>
+      <button id="bkBtn" class="bk-btn" title="数据备份与恢复"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg> 备份</button>
+    </div>
+  </div>
+</header>
+
+<main id="app"></main>
+
+<footer>
+  <div class="wrap">
+    <b>毕设档案 · 艺术设计系</b> — 收录广州美术学院工业设计学院艺术设计系 2022、2024、2025、2026 届本科毕业作品展中的优秀作品（已人工筛选）。<br>
+    图片版权归原作者及主办方所有，本页仅作教学整理与筛选参考。分析维度（亮点 / 概念内核 / 文化源流 / 符号提取 / 呈现方式 / 阐述方式 / 转译手法）为基于公开图文的二次解读。
+  </div>
+</footer>
+
+<div class="modal" id="modal"></div>
+<div class="lb" id="lb"></div>
+
+<script src="data.js"></script>
+<script>
+if(!window.ART_DATA || !window.ART_DATA.works || !window.ART_DATA.works.length){
+  document.write('<div style="max-width:520px;margin:18vh auto;padding:28px 30px;font-family:sans-serif;background:#FFF7ED;border:1px solid #F0C892;border-radius:14px;color:#7A4B18;line-height:1.9">'
+    +'<b>数据没加载出来 😕</b><br>'
+    +'常见原因：<br>'
+    +'1️⃣ 只把 index.html 发到了手机，<b>data.js / art_images / art_thumb 文件夹没一起发</b> —— 请整个文件夹打包发送，或改用单文件版「毕设档案库-手机版.html」；<br>'
+    +'2️⃣ 在微信/QQ 里直接点开 —— 请点右上角「…」选择<b>用浏览器打开</b>；<br>'
+    +'3️⃣ 文件夹被移动过，index.html 与 data.js 不在同一目录。'
+    +'</div>');
+  throw new Error('ART_DATA missing');
+}
+/* 备份覆盖层：若用户曾导入备份，优先用它（导入后即时生效，无需改文件） */
+let __OV = null;
+try { const _o = localStorage.getItem('gradArchiveOverride'); if(_o) __OV = JSON.parse(_o); } catch(e){}
+if(__OV && __OV.data && __OV.data.works) window.ART_DATA = __OV.data;
+const D = window.ART_DATA, W = D.works;
+const TH = n => 'art_thumb/' + n, IM = n => 'art_images/' + n;
+const ICON = {
+  heart:'<path d="M12 20s-7-4.5-7-9.5A3.9 3.9 0 0 1 12 7a3.9 3.9 0 0 1 7 3.5c0 5-7 9.5-7 9.5z"/>',
+  trash:'<path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M10 11v6"/><path d="M14 11v6"/>',
+  restore:'<path d="M3 12a9 9 0 1 0 9-9 9.7 9.7 0 0 0-6.7 2.7"/><path d="M3 5v7h7"/>',
+  grid:'<rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/>',
+  users:'<path d="M16 20v-1.5a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4V20"/><circle cx="9" cy="7" r="3.5"/><path d="M22 20v-1.5a4 4 0 0 0-3-3.87"/><path d="M16 3.6a4 4 0 0 1 0 7"/>',
+  globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/>',
+  leaf:'<path d="M4 20c0-8 5-13 16-14 0 11-5 16-13 16H4z"/><path d="M4 20c4-4 7-7 11-11"/>',
+  sparkle:'<path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><circle cx="12" cy="12" r="3.6"/>',
+  cube:'<path d="M12 3 3.5 7.5v9L12 21l8.5-4.5v-9z"/><path d="m3.5 7.5 8.5 4.5 8.5-4.5"/><path d="M12 21v-9"/>',
+  pen:'<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/>',
+  eye:'<path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/>',
+  tag:'<path d="M3 11V4.5A1.5 1.5 0 0 1 4.5 3H11l9 9-7.5 7.5z"/><circle cx="7.5" cy="7.5" r="1.2"/>',
+  quote:'<path d="M9 7H5.5A1.5 1.5 0 0 0 4 8.5V11a1.5 1.5 0 0 0 1.5 1.5H7a1.5 1.5 0 0 1 1.5 1.5V16a1.5 1.5 0 0 1-1.5 1.5H5"/><path d="M19 7h-3.5A1.5 1.5 0 0 0 14 8.5V11a1.5 1.5 0 0 0 1.5 1.5H17a1.5 1.5 0 0 1 1.5 1.5V16a1.5 1.5 0 0 1-1.5 1.5H15"/>',
+  x:'<path d="M18 6 6 18M6 6l12 12"/>',
+  back:'<path d="m15 18-6-6 6-6"/>',
+  arrowL:'<path d="m15 18-6-6 6-6"/>', arrowR:'<path d="m9 6 6 6-6 6"/>',
+  down:'<path d="M12 4v11"/><path d="m7.5 10.5 4.5 4.5 4.5-4.5"/><path d="M5 20h14"/>',
+  play:'<circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l5.5-3.5z"/>',
+  zoom:'<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/><path d="M11 8.5v5M8.5 11h5"/>',
+  home:'<path d="M4 10.5 12 4l8 6.5"/><path d="M6 9.5V20h12V9.5"/>',
+  layers:'<path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>',
+  book:'<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>',
+  chart:'<path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-5"/>',
+  photodel:'<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9" r="1.7"/><path d="m4.5 18 4.5-4 3.2 2.6L16 13l3 3"/><path d="M14.5 7.5 19 12M19 7.5 14.5 12"/>',
+  sliders:'<path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2.3"/><circle cx="8" cy="17" r="2.3"/>'
+};
+const svg = (n,s=18,w=1.5,fill) => `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="${fill||'none'}" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round">${ICON[n]||''}</svg>`;
+
+/* ---------- state ---------- */
+const isMobile = () => window.matchMedia && window.matchMedia('(max-width:720px)').matches;
+const FAV_KEY = 'gradArchiveFav';
+const TRASH_KEY = 'gradArchiveTrash';
+const IMGDEL_KEY = 'gradArchiveImgDel';
+const S = {
+  view:'home', q:'',
+  f:{year:[],typeCat:[],motif:[],presCat:[],narrMethod:[],transMethod:[],teacher:[]},
+  fmode:'intersect',
+  fexp:!isMobile(),
+  fav:new Set(JSON.parse(localStorage.getItem(FAV_KEY) || '[]')),
+  trash:new Set(JSON.parse(localStorage.getItem(TRASH_KEY) || '[]')),
+  imgDel:new Set(JSON.parse(localStorage.getItem(IMGDEL_KEY) || '[]')),
+  open:null, slide:0, lb:false, timer:null
+};
+if(__OV){ if(Array.isArray(__OV.trash)) S.trash = new Set(__OV.trash); if(Array.isArray(__OV.imgDel)) S.imgDel = new Set(__OV.imgDel); }
+const saveFav = () => localStorage.setItem(FAV_KEY, JSON.stringify([...S.fav]));
+const saveTrash = () => localStorage.setItem(TRASH_KEY, JSON.stringify([...S.trash]));
+const saveImgDel = () => localStorage.setItem(IMGDEL_KEY, JSON.stringify([...S.imgDel]));
+/* 应用已删除图片：过滤每件作品的 imgs（保留原始列表 _imgsAll 用于恢复） */
+W.forEach(w=>{ w._imgsAll = w.imgs.slice(); if(S.imgDel.size) w.imgs = w.imgs.filter(im=>!S.imgDel.has(w.id+':'+im)); });
+const active = () => W.filter(w => !S.trash.has(w.id));
+const poolOf = (w,k) => {
+  if(k==='teacher') return w.teachers.split(/[、,]/).map(s=>s.trim());
+  if(k==='transMethod') return w.transMethod || [];
+  if(k==='year') return [w.year];
+  return [w[k]];
+};
+const hay = w => [w.title,w.sub,w.authors,w.teachers,w.type,w.typeCat,w.motif,w.year,w.concept,w.highlight,
+  w.desc,w.cultureNote,w.narrNote,w.narration,w.narrMethod,w.presCat,
+  w.kw.join(' '),w.culture.join(' '),
+  w.presentation.join(' '),w.presNote,w.symbols.map(s=>s.src+s.way+s.out).join(' '),
+  (w.transMethod||[]).join(' '),Object.values(w.narrBreak).join(' ')].join(' ').toLowerCase();
+
+// 统计计数（在当前可见作品集上）
+function counts(key, flatten=false){
+  const c = {};
+  active().forEach(w=>{
+    const vals = flatten ? poolOf(w,key) : [w[key]];
+    vals.forEach(v=>{ if(v) c[v]=(c[v]||0)+1; });
+  });
+  return Object.entries(c).sort((a,b)=>b[1]-a[1] || a[0].localeCompare(b[0]));
+}
+function teacherCounts(){
+  const c={};
+  active().forEach(w=>poolOf(w,'teacher').forEach(t=>c[t]=(c[t]||0)+1));
+  return Object.entries(c).sort((a,b)=>b[1]-a[1] || a[0].localeCompare(b[0]));
+}
+function match(w){
+  if(S.q && !S.q.toLowerCase().split(/\s+/).filter(Boolean).every(k => hay(w).includes(k))) return false;
+  const dims = Object.keys(S.f).filter(k => S.f[k].length);
+  if(!dims.length) return true;
+  if(S.fmode === 'union') return dims.some(k => S.f[k].some(v => poolOf(w,k).includes(v)));
+  return dims.every(k => S.f[k].some(v => poolOf(w,k).includes(v)));
+}
+// 交集模式下，依据「除本维度外已选条件」裁剪出的可选标签集合（实现联动收窄）
+function facetCounts(k){
+  const base = (S.fmode === 'union') ? active() : active().filter(w=>{
+    for(const k2 in S.f){
+      if(k2 === k) continue;
+      if(!S.f[k2].length) continue;
+      if(!S.f[k2].some(v => poolOf(w,k2).includes(v))) return false;
+    }
+    return true;
+  });
+  const c = {};
+  base.forEach(w=>{ const vals = poolOf(w,k); vals.forEach(v=>{ if(v) c[v]=(c[v]||0)+1; }); });
+  const order = Object.keys(c).sort((a,b)=>(c[b]-c[a]) || a.localeCompare(b));
+  return {counts:c, order};
+}
+const filtered = () => active().filter(match);
+const sortFav = arr => arr.slice().sort((a,b) => (S.fav.has(b.id)?1:0) - (S.fav.has(a.id)?1:0));
+
+/* ---------- render ---------- */
+const esc = s => (s||'').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const app = document.getElementById('app');
+
+function card(w){
+  const on = S.fav.has(w.id);
+  return `<article class="card" data-id="${w.id}">
+    <div class="ph">
+      <img loading="lazy" src="${TH(w.imgs[0])}" alt="${esc(w.title)}">
+      <span class="yr">${w.year}</span>
+      <span class="nimg">${w.imgs.length} 图</span>
+      ${w.video?`<span class="vidtag">${svg('play',11,2,'currentColor')} 视频</span>`:''}
+      <div class="acts">
+        <button class="fav ${on?'on':''}" data-fav="${w.id}" title="${on?'取消收藏':'收藏'}">${svg('heart',17,1.6,on?'currentColor':'none')}</button>
+        <button class="del" data-del="${w.id}" title="删除到回收站">${svg('trash',16,1.4)}</button>
+      </div>
+    </div>
+    <div class="bd">
+      <div class="tp">${esc(w.typeCat)}${w.motif?`<span class="dot">·</span>${esc(w.motif)}`:''}</div>
+      <h3>${esc(w.title)}</h3>
+      <p class="hl">${esc(w.highlight)}</p>
+      <div class="tags">${w.transMethod.slice(0,3).map(c=>`<span class="tag">${esc(c)}</span>`).join('')}</div>
+      <div class="mt"><span>${esc(w.authors)}</span><b>导师 ${esc(w.teachers)}</b></div>
+    </div></article>`;
+}
+function cardList(list){
+  const favs = list.filter(w => S.fav.has(w.id)), rest = list.filter(w => !S.fav.has(w.id));
+  let h = '';
+  if(favs.length){
+    h += `<div class="subhead">${svg('heart',16,1.6,'currentColor')} 已收藏 ${favs.length}</div><div class="grid">${favs.map(card).join('')}</div>`;
+  }
+  if(rest.length){
+    if(favs.length) h += `<div class="subhead">全部作品</div>`;
+    h += `<div class="grid">${rest.map(card).join('')}</div>`;
+  }
+  return h;
+}
+
+function home(){
+  const all = active().flatMap(w => w.imgs.map(i => ({i, w})));
+  const pick = all.slice().sort(()=>Math.random()-0.5).slice(0,8);
+  const favList = active().filter(w => S.fav.has(w.id));
+  const teachers = teacherCounts();
+  return `
+  <div class="wrap">
+    <section class="hero">
+      <div>
+        <h1>把毕业设计<span style="font-family:var(--serif)">读成</span><br><em>可被检索的方法</em></h1>
+        <p>收录广州美术学院工业设计学院 <b>艺术设计系</b> 优秀毕业作品（2022 / 2024 / 2025 / 2026 届）。逐件拆解其最大亮点、概念内核、文化源流、符号提取路径、呈现方式、阐述策略与转译手法——供选题参考、横向比对与导师筛选。</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>${active().length}</b><span>件作品</span></div>
+        <div class="stat"><b>${all.length}</b><span>张图像</span></div>
+        <div class="stat"><b>${teachers.length}</b><span>位导师</span></div>
+        <div class="stat"><b>${counts('motif').length}</b><span>个文化母题</span></div>
+      </div>
+    </section>
+
+    <div class="carousel" id="cs">
+      <span class="cs-badge">RANDOM · 随机轮播</span>
+      ${pick.map((p,n)=>`<div class="cs-slide ${n===0?'on':''}" data-n="${n}" data-id="${p.w.id}" data-slide="${p.w.imgs.indexOf(p.i)}">
+        <img src="${TH(p.i)}" alt="">
+        <div class="cs-veil"></div>
+        <div class="cs-info" data-id="${p.w.id}">
+          <span class="cs-tag">${esc(p.w.year)} · ${esc(p.w.typeCat)}</span>
+          <h3>${esc(p.w.title)}</h3>
+          <p>${esc(p.w.highlight)}</p>
+          <div class="by">${esc(p.w.authors)} · 指导老师 ${esc(p.w.teachers)}</div>
+        </div></div>`).join('')}
+      <div class="cs-dots">${pick.map((_,n)=>`<button data-n="${n}" class="${n===0?'on':''}"></button>`).join('')}</div>
+    </div>
+
+    <section class="sec">
+      <div class="sec-head"><h2>从五个入口进入</h2><span>ENTRY POINTS</span></div>
+      <div class="entries">
+        <button class="entry" data-go="library"><div class="ic">${svg('grid',19)}</div><h4>全部作品</h4><p>按届别、类型、母题、呈现、阐述、转译手法、导师多维筛选。</p></button>
+        <button class="entry" data-go="culture"><div class="ic">${svg('globe',19)}</div><h4>文化母题</h4><p>看同一文化母题在不同作品里被提取成了什么符号与落点。</p></button>
+        <button class="entry" data-go="teacher"><div class="ic">${svg('users',19)}</div><h4>指导导师</h4><p>按导师分组查阅其指导的作品与方法倾向。</p></button>
+        <button class="entry" data-go="knowledge"><div class="ic">${svg('book',19)}</div><h4>知识沉淀</h4><p>阐述模板、转译手法谱系、导师与母题分布的蒸馏视图。</p></button>
+        <button class="entry" data-go="fav"><div class="ic" style="background:var(--love-soft);color:var(--love)">${svg('heart',19,1.6,'currentColor')}</div><h4>我的收藏 ${favList.length}</h4><p>点爱心收藏的作品会优先显示在所有列表顶部。</p></button>
+      </div>
+    </section>
+
+    <section class="sec" style="padding-top:0">
+      <div class="sec-head"><h2>作品一览</h2><span>WORKS</span>
+        <button class="more" data-go="library">查看全部 →</button></div>
+      ${cardList(active())}
+    </section>
+  </div>`;
+}
+
+function library(){
+  const list = filtered();
+  const F = [
+    ['year','届别'],
+    ['typeCat','作品类型'],
+    ['motif','文化母题'],
+    ['presCat','呈现方式'],
+    ['narrMethod','阐述方式'],
+    ['transMethod','转译手法'],
+    ['teacher','指导导师']
+  ];
+  const nActive = Object.values(S.f).flat().length + (S.q?1:0);
+  const sel = [];
+  F.forEach(([k,label])=> S.f[k].forEach(v=> sel.push([k,label,v])) );
+  const fac = {}; F.forEach(([k])=> fac[k]=facetCounts(k));
+  return `
+  <div class="wrap sec">
+    <div class="filters ${S.fexp?'expanded':''}" id="filters">
+      <div class="fmask" data-fmask></div>
+      <div class="fbar">
+        <button class="ft" data-ftoggle>${svg('sliders',16,1.6)} 筛选 <span class="chev">${svg('down',13,2.4)}</span></button>
+        <div class="fmode" title="并集：任一条件满足即显示；交集：必须同时满足，且选项会自动收窄到当前结果集">
+          <span class="lab">模式</span>
+          <button data-fmode="union" class="${S.fmode==='union'?'on':''}">并集</button>
+          <button data-fmode="intersect" class="${S.fmode==='intersect'?'on':''}">交集</button>
+        </div>
+        <span class="fcnt">可见 ${list.length} / ${active().length} 件</span>
+        ${nActive?`<button class="freset" data-reset>清除 (${nActive})</button>`:''}
+      </div>
+      <div class="factive-strip">
+        ${sel.length? sel.map(([k,label,v])=>`<span class="ochip" data-fremove data-f="${k}" data-v="${esc(v)}"><b>${esc(v)}</b><span class="x">${svg('x',11,2.6)}</span></span>`).join('')
+          : `<span class="hint">未选条件 · 点「筛选」展开多维条件</span>`}
+      </div>
+      <div class="fpanel">
+        ${F.map(([k,label])=>{
+          const arr = fac[k].order;
+          if(!arr.length) return '';
+          return `<div class="fgroup">
+            <div class="gl">${label}<span class="n">${arr.length}</span></div>
+            <div class="fchips">${arr.map(v=>`<button class="chip ${S.f[k].includes(v)?'on':''}" data-f="${k}" data-v="${esc(v)}">${esc(v)}<i>${fac[k].counts[v]}</i></button>`).join('')}</div>
+          </div>`;
+        }).join('')}
+        ${nActive?`<button class="freset freset2" data-reset>清除全部条件</button>`:''}
+      </div>
+    </div>
+    ${list.length ? cardList(list)
+      : `<div class="empty">${svg('globe',40,1.2)}<p>没有符合条件的作品，试试放宽筛选或换个关键词。</p></div>`}
+  </div>`;
+}
+
+function teacherView(){
+  const tc = teacherCounts();
+  return `<div class="wrap sec">${tc.map(([t,c])=>{
+    const ws = active().filter(w=>w.teachers.includes(t));
+    if(!ws.length) return '';
+    return `<div class="group">
+      <div class="group-h"><h3>${esc(t)}</h3><span class="n">${c} 件</span>
+        <span class="sub">${ws.slice(0,5).map(w=>esc(w.title)).join(' · ')}${ws.length>5?'…':''}</span></div>
+      ${cardList(ws)}</div>`;
+  }).join('')}</div>`;
+}
+
+function cultureView(){
+  const motifs = counts('motif');
+  return `<div class="wrap sec">
+    <div class="sec-head"><h2>文化母题</h2><span>CULTURAL MOTIFS · 粗分类</span></div>
+    ${motifs.map(([m,c])=>{
+      const ws = active().filter(w=>w.motif===m);
+      return `<div class="group">
+        <div class="group-h"><h3>${svg('globe',17)} ${esc(m)}</h3><span class="n">${c} 件</span></div>
+        <div class="grid">${ws.map(w=>`
+          <article class="card" data-id="${w.id}">
+            <div class="ph"><img loading="lazy" src="${TH(w.imgs[0])}">
+              <span class="yr">${w.year}</span>
+              <div class="acts">
+                <button class="fav ${S.fav.has(w.id)?'on':''}" data-fav="${w.id}">${svg('heart',17,1.6,S.fav.has(w.id)?'currentColor':'none')}</button>
+                <button class="del" data-del="${w.id}" title="删除">${svg('trash',16,1.4)}</button>
+              </div>
+            </div>
+            <div class="bd">
+              <div class="tp">${esc(w.typeCat)}</div>
+              <h3>${esc(w.title)}</h3>
+              <div class="tags" style="margin:0 0 10px">${w.culture.slice(0,4).map(c=>`<span class="tag">${esc(c)}</span>`).join('')}</div>
+              <p class="hl" style="-webkit-line-clamp:4">${esc(w.cultureNote)}</p>
+              <div class="mt"><span>${esc(w.authors)}</span><b>${esc(w.teachers)}</b></div>
+            </div></article>`).join('')}
+        </div></div>`;
+    }).join('')}
+  </div>`;
+}
+
+function favView(){
+  const ws = active().filter(w=>S.fav.has(w.id));
+  return `<div class="wrap sec">
+    <div class="sec-head"><h2>我的收藏</h2><span>FAVOURITES</span></div>
+    ${ws.length ? cardList(ws)
+      : `<div class="empty">${svg('heart',40,1.2)}<p>还没有收藏。在作品卡片右上角点一下爱心，收藏的作品会优先显示在所有列表顶部。</p></div>`}
+  </div>`;
+}
+
+function trashView(){
+  const ws = W.filter(w=>S.trash.has(w.id));
+  return `<div class="wrap sec">
+    <div class="sec-head"><h2>回收站</h2><span>TRASH · 可恢复</span>
+      ${ws.length?`<button class="reset" data-empty-trash>清空回收站</button>`:''}
+    </div>
+    ${ws.length? `<div class="grid">${ws.map(w=>`
+      <article class="card" data-id="${w.id}">
+        <div class="ph"><img loading="lazy" src="${TH(w.imgs[0])}"><span class="yr">${w.year}</span></div>
+        <div class="bd">
+          <div class="tp">${esc(w.typeCat)} · ${esc(w.motif)}</div>
+          <h3>${esc(w.title)}</h3>
+          <p class="hl">${esc(w.highlight)}</p>
+          <div class="mt"><span>${esc(w.authors)}</span></div>
+          <button class="dlbtn" data-restore="${w.id}" style="margin-top:12px">${svg('restore',15)} 恢复这件作品</button>
+        </div>
+      </article>`).join('')}</div>`
+      : `<div class="empty">${svg('trash',40,1.2)}<p>回收站为空。在作品卡片上点删除按钮，作品会进入这里，随时可恢复。</p></div>`}
+    ${S.imgDel.size? `<div class="sec-head" style="margin-top:40px"><h2>已删除的图片</h2><span>IMAGES · ${S.imgDel.size} 张可恢复</span><span style="margin-left:auto;display:inline-flex;gap:8px"><button class="reset" data-copydel>复制清单</button><button class="reset" data-downdel>下载清单</button><button class="reset" data-clearimgdel>清除记录</button></span></div>
+    <div class="grid">${[...S.imgDel].map(key=>{
+      const ci = key.indexOf(':'), wid = key.slice(0,ci), im = key.slice(ci+1);
+      const w = W.find(x=>x.id===wid);
+      if(!w) return '';
+      return `<article class="card" style="cursor:default"><div class="ph"><img loading="lazy" src="${TH(im)}"></div><div class="bd"><div class="tp">${esc(w.title)}</div><button class="dlbtn" data-imgrestore="${key}" style="margin-top:12px">${svg('restore',15)} 恢复这张图</button></div></article>`;
+    }).join('')}</div>`:''}
+  </div>`;
+}
+
+/* ---------- knowledge distillation ---------- */
+const NARR_TEMPLATES = {
+  "问题—机制—价值": { formula:"现象 / 痛点 → 行动机制 → 可量化的价值 / 闭环", tip:"开篇抛出可被感知的问题，中段用流程、系统或参与机制把解决方案结构化，收尾落在『模式/路径/新可能』上。", keys:["问题","机制","闭环","价值"] },
+  "人群—意象—体验": { formula:"用户画像 → 核心意象 → 系统化体验", tip:"先锁定一个具体人群及其情感缺口，再注入一个可被身体感知的意象（姿态、触感、场景），最后用系列化产品/空间把体验串成系统。", keys:["人群","意象","系统","体验"] },
+  "背景—转译—应用": { formula:"文化或历史背景 → 提取 / 转译 → 当代应用", tip:"以时空坐标定调，说明从文化源到设计语言的方法（抽象、媒介转换、场景迁移），再落到今天的器物、内容或空间。", keys:["背景","转译","应用","传统"] },
+  "批判—重构—质询": { formula:"立场 / 反题 → 转译或设定 → 质询与反思", tip:"先声明对现状的批判立场（异化、平权、残缺），通过设计把议题可视化或情境化，收尾不急着给答案，而是把问题重新抛回给观众/社会。", keys:["批判","重构","质询","反题"] },
+  "媒介—角色—传播": { formula:"媒介选择 → 角色 / 人格设定 → 传播链路", tip:"重点讲『谁来讲、用什么形式讲、讲给谁』。角色化（博主、花灵、神兽）与媒介（短视频、IP、游戏）是转译开关。", keys:["媒介","角色","传播","IP"] },
+  "材料—形态—感知": { formula:"材料 / 形态研究 → 感知实验 → 产品化", tip:"从日常材料或身体感知出发，把触觉、嗅觉、视觉等模糊体验转译为可量产的语言，过程本身即是说服。", keys:["材料","形态","感知","实验"] },
+  "田野—叙事—在地": { formula:"田野 / 考据 → 叙事结构 → 在地行走 / 参与", tip:"以地方、民俗、语言或神兽为线索，用图典、寻踪、声韵等叙事方式把观众拉回现场。", keys:["田野","叙事","在地","图典"] },
+  "品牌—场景—消费": { formula:"民俗 / 品牌母题 → 场景系统 → 消费触点", tip:"把礼俗、节庆或生活方式转译为可购买、可携带、可赠送的品牌场景，强调消费与仪式感的合谋。", keys:["品牌","场景","消费","礼俗"] },
+  "余料—再生": { formula:"废料 / 余料 → 随形 / 拼合 → 再生闭环", tip:"从边角料、生产余料或废弃物出发，用随形、拼合、闭环等策略赋予其第二次生命。", keys:["余料","再生","闭环","废料"] },
+  "其他": { formula:"自由结构", tip:"结构较为特殊，建议在详情页中直接参考原文说明。", keys:[] }
+};
+const TAXONOMY = {
+  "工具系列": {
+    desc: "用户提示的四种高阶转译策略",
+    items: [
+      {name:"造型挪用", color:"var(--accent)", note:"对既有造型、符号、形象进行借用与变形"},
+      {name:"行为绑定", color:"var(--teal)", note:"把文化行为、仪式、使用方式绑定为设计触发点"},
+      {name:"品牌叙事", color:"var(--purple)", note:"以品牌/IP/角色/内容为载体的叙事"},
+      {name:"产品语义", color:"#B08D57", note:"用产品功能、象征、隐喻承载意义"}
+    ]
+  },
+  "维度转译": {
+    desc: "材料、色彩、形态、情绪、概念、行为六个可操作的转译切面",
+    items: [
+      {name:"材料转译", color:"#8A9A5B"},
+      {name:"色彩转译", color:"#C87D59"},
+      {name:"形态转译", color:"#5B8A9A"},
+      {name:"情绪转译", color:"#B85B7A"},
+      {name:"概念转译", color:"#7A6B9D"},
+      {name:"行为转译", color:"#4A8B8C"}
+    ]
+  },
+  "复合手法": {
+    desc: "跨媒介或跨角色的混合策略",
+    items: [
+      {name:"视觉转移", color:"#5B8A9A"},
+      {name:"媒介转换", color:"#7A6B9D"},
+      {name:"角色化", color:"#C87D59"},
+      {name:"功能嫁接", color:"#8A9A5B"}
+    ]
+  }
+};
+
+function barChart(pairs, cls='', maxOverride){
+  const max = maxOverride || Math.max(...pairs.map(p=>p[1]),1);
+  return `<div class="bar-chart ${cls}">${pairs.map(([v,n])=>`<div class="bar ${cls}">
+    <div class="l" title="${esc(v)}">${esc(v)}</div>
+    <div class="bar-track"><div class="bar-fill" style="width:${Math.round(n/max*100)}%"></div></div>
+    <div class="n">${n}</div>
+  </div>`).join('')}</div>`;
+}
+function knowledgeView(){
+  const teachers = teacherCounts();
+  const motifs = counts('motif');
+  const typeCats = counts('typeCat');
+  const presCats = counts('presCat');
+  const narrMethods = counts('narrMethod');
+  const transCounts = Object.fromEntries(counts('transMethod', true));
+  const years = counts('year').sort((a,b)=>a[0].localeCompare(b[0]));
+  const narrGroups = {};
+  active().forEach(w=>{ (narrGroups[w.narrMethod]=narrGroups[w.narrMethod]||[]).push(w); });
+  return `<div class="wrap know">
+    <h1 class="know-h">知识沉淀</h1>
+    <p class="know-sub">把 59 件作品的阐述结构、转译手法与分布特征蒸馏成可复用的模板，方便你在选题、写说明、做方案时快速对位。</p>
+
+    <section class="know-sec">
+      <div class="know-grid">
+        <div class="kcard"><b>${active().length}</b><span>件可见作品</span></div>
+        <div class="kcard"><b>${D.works.reduce((a,w)=>a+w.imgs.length,0)}</b><span>张图像</span></div>
+        <div class="kcard"><b>${teachers.length}</b><span>位导师</span></div>
+        <div class="kcard"><b>${motifs.length}</b><span>个文化母题</span></div>
+      </div>
+    </section>
+
+    <section class="know-sec">
+      <h3>${svg('book',17)} 阐述方式模板</h3>
+      ${narrMethods.map(([m,c])=>{
+        const t = NARR_TEMPLATES[m] || NARR_TEMPLATES['其他'];
+        const exs = (narrGroups[m]||[]).slice(0,3).map(w=>w.title);
+        return `<div class="template-card">
+          <h4>${esc(m)} <span style="font-size:13px;color:var(--ink3);font-weight:400">${c} 件</span></h4>
+          <div class="tm">高频词：${t.keys.map(k=>`<span class="tag">${esc(k)}</span>`).join('')}</div>
+          <div class="formula">${esc(t.formula)}</div>
+          <p>${esc(t.tip)}</p>
+          ${exs.length?`<div class="ex">示例作品：${exs.map(x=>`<button class="pill" data-q="${esc(x)}">${esc(x)}</button>`).join(' · ')}</div>`:''}
+        </div>`;
+      }).join('')}
+    </section>
+
+    <section class="know-sec">
+      <h3>${svg('layers',17)} 转译手法谱系</h3>
+      <div class="taxonomy">
+        ${Object.entries(TAXONOMY).map(([group,info])=>`<div class="tax-box">
+          <h4>${esc(group)} <span style="font-weight:400;color:var(--ink3)">— ${esc(info.desc)}</span></h4>
+          ${info.items.map(it=>{
+            const n = transCounts[it.name] || 0;
+            return `<span class="tag" style="border:1px solid ${it.color}33;color:${it.color};background:#fff"><b>${n}</b> ${esc(it.name)}${it.note?` · ${esc(it.note)}`:''}</span>`;
+          }).join('')}
+        </div>`).join('')}
+      </div>
+      <div style="margin-top:24px">${barChart(counts('transMethod',true).slice(0,16),'trans')}</div>
+    </section>
+
+    <section class="know-sec">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+        <div>
+          <h3>${svg('users',17)} 导师指导数量</h3>
+          ${barChart(teachers.slice(0,20),'teacher')}
+        </div>
+        <div>
+          <h3>${svg('globe',17)} 文化母题分布</h3>
+          ${barChart(motifs,'motif')}
+        </div>
+      </div>
+    </section>
+
+    <section class="know-sec">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px">
+        <div><h3>${svg('cube',17)} 作品类型</h3>${barChart(typeCats,'type')}</div>
+        <div><h3>${svg('eye',17)} 呈现方式</h3>${barChart(presCats,'pres')}</div>
+        <div><h3>${svg('tag',17)} 届别分布</h3>${barChart(years,'year')}</div>
+      </div>
+    </section>
+  </div>`;
+}
+
+/* ---------- detail ---------- */
+function detail(w){
+  const i = Math.min(S.slide, w.imgs.length-1);
+  const on = S.fav.has(w.id);
+  const trashed = S.trash.has(w.id);
+  return `
+  <div class="mtop"><div class="mtop-in">
+    <button class="back-btn" data-close>${svg('back',17)} 返回</button>
+    <span class="t">${esc(w.title)}</span>
+    <div class="r">
+      ${trashed?`<button class="iconbtn" data-restore="${w.id}" title="恢复">${svg('restore',17)}</button>`:''}
+      <button class="iconbtn ${on?'on':''}" data-fav="${w.id}" title="收藏">${svg('heart',17,1.6,on?'currentColor':'none')}</button>
+      ${!trashed?`<button class="iconbtn del" data-del="${w.id}" title="删除到回收站">${svg('trash',16,1.4)}</button>`:''}
+      <a class="iconbtn" href="${IM(w.imgs[i])}" download="${esc(w.title)}_${i+1}.jpg" title="下载当前图">${svg('down',16)}</a>
+      ${w.imgs.length>1?`<button class="iconbtn del" data-imgdel="${w.imgs[i]}" title="删除这张图（可在回收站恢复）">${svg('photodel',15,1.4)}</button>`:''}
+      <button class="iconbtn" data-close title="关闭 (Esc)">${svg('x',16)}</button>
+    </div></div></div>
+  <div class="mbody">
+    <div>
+      ${trashed?`<div class="trash-banner">${svg('trash',16)} 此作品已在回收站中，点击右上角恢复按钮可恢复。</div>`:''}
+      <div class="stage" data-zoom>
+        <img id="stageImg" src="${TH(w.imgs[i])}" alt="${esc(w.title)}">
+        <span class="zoom">${svg('zoom',13)} 点击放大</span>
+        ${w.imgs.length>1?`<button class="arw l" data-pv>${svg('arrowL',18)}</button><button class="arw r" data-nx>${svg('arrowR',18)}</button>`:''}
+        <span class="cnt">${i+1} / ${w.imgs.length}</span>
+      </div>
+      ${w.imgs.length>1?`<div class="strips">${w.imgs.map((im,n)=>`<img class="${n===i?'on':''}" data-n="${n}" src="${TH(im)}" loading="lazy">`).join('')}</div>`:''}
+      ${w.video?`<div class="dlrow"><a class="dlbtn vid" href="${w.video}" target="_blank" rel="noopener">${svg('play',16)} 观看原视频（微信）</a></div>`:''}
+      <div class="dlrow">
+        <a class="dlbtn" href="${IM(w.imgs[i])}" download="${esc(w.title)}_${i+1}.jpg">${svg('down',16)} 下载这张图</a>
+        ${w.imgs.length>1?`<button class="dlbtn" data-dlall>${svg('down',16)} 下载全部 ${w.imgs.length} 张</button>`:''}
+      </div>
+
+      <div class="blk" style="margin-top:30px">
+        <div class="blk-h"><div class="ic">${svg('quote',15)}</div><h4>原文说明（作者自述）</h4></div>
+        <div class="desc-box" style="margin:0"><p>${esc(w.desc)}</p></div>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="dtitle">${esc(w.title)}${w.sub?`<span style="font-size:16px;color:var(--ink3);font-weight:400"> · ${esc(w.sub)}</span>`:''}</h2>
+      <div class="dmeta">
+        <span>${w.year} 届</span><span>${esc(w.authors)}</span><span>导师 ${esc(w.teachers)}</span>
+        <span class="gray">${esc(w.type)}</span>${w.topic?`<span class="gray">${esc(w.topic)}</span>`:''}
+      </div>
+
+      <div class="hlbox">
+        <div class="lbl">${svg('sparkle',14)} 最大亮点</div>
+        <p>${esc(w.highlight)}</p>
+      </div>
+
+      <div class="blk">
+        <div class="blk-h"><div class="ic">${svg('grid',15)}</div><h4>粗分类</h4></div>
+        <div class="pill-wrap" style="margin-bottom:11px">
+          ${[['typeCat','作品类型'],['motif','文化母题'],['presCat','呈现方式'],['narrMethod','阐述方式']].map(([k,label])=>w[k]?`<button class="pill" data-f="${k}" data-v="${esc(w[k])}">${esc(label)}: ${esc(w[k])}</button>`:'').join('')}
+        </div>
+        <div class="pill-wrap">${(w.transMethod||[]).map(t=>`<button class="pill" data-f="transMethod" data-v="${esc(t)}">${esc(t)}</button>`).join('')}</div>
+      </div>
+
+      <div class="blk">
+        <div class="blk-h"><div class="ic">${svg('cube',15)}</div><h4>作品概念内核</h4></div>
+        <p class="concept">${esc(w.concept)}</p>
+      </div>
+
+      <div class="blk">
+        <div class="blk-h"><div class="ic">${svg('globe',15)}</div><h4>文化 / 概念源流</h4></div>
+        <div class="pill-wrap" style="margin-bottom:11px">${w.culture.map(c=>`<button class="pill" data-q="${esc(c)}">${esc(c)}</button>`).join('')}</div>
+        <p>${esc(w.cultureNote)}</p>
+      </div>
+
+      <div class="blk">
+        <div class="blk-h"><div class="ic">${svg('leaf',15)}</div><h4>提取了什么符号 → 如何转译</h4></div>
+        <table class="sym"><thead><tr><th style="width:31%">原符号</th><th style="width:35%">转译手法</th><th>设计落点</th></tr></thead>
+        <tbody>${w.symbols.map(s=>`<tr><td>${esc(s.src)}</td><td>${esc(s.way)}</td><td>${esc(s.out)}</td></tr>`).join('')}</tbody></table>
+      </div>
+
+      <div class="blk">
+        <div class="blk-h"><div class="ic">${svg('eye',15)}</div><h4>呈现方式</h4></div>
+        <div class="pill-wrap" style="margin-bottom:11px">${w.presentation.map(p=>`<button class="pill" data-f="presCat" data-v="${esc(w.presCat)}">${esc(p)}</button>`).join('')}</div>
+        <p>${esc(w.presNote)}</p>
+      </div>
+
+      <div class="blk">
+        <div class="blk-h"><div class="ic">${svg('pen',15)}</div><h4>阐述方式 · ${esc(w.narration)}</h4></div>
+        <div style="margin-bottom:11px"><button class="pill" data-f="narrMethod" data-v="${esc(w.narrMethod)}">${esc(w.narrMethod)}</button></div>
+        <ul class="narr-list">
+          <li><b>开篇</b><span>${esc(w.narrBreak.opening)}</span></li>
+          <li><b>结构</b><span>${esc(w.narrBreak.structure)}</span></li>
+          <li><b>修辞</b><span>${esc(w.narrBreak.rhetoric)}</span></li>
+          <li><b>收尾</b><span>${esc(w.narrBreak.closing)}</span></li>
+        </ul>
+        <p style="margin-top:11px">${esc(w.narrNote)}</p>
+      </div>
+
+      <div class="blk">
+        <div class="blk-h"><div class="ic">${svg('tag',15)}</div><h4>关键词</h4></div>
+        <div class="pill-wrap">${w.kw.map(k=>`<button class="pill" data-q="${esc(k)}">${esc(k)}</button>`).join('')}</div>
+      </div>
+    </div>
+  </div>`;
+}
+
+/* ---------- paint ---------- */
+const TABS = [['home','首页'],['library','作品库'],['teacher','导师'],['culture','文化母题'],['knowledge','知识沉淀'],['fav','收藏'],['trash','回收站']];
+function paint(){
+  document.getElementById('tabs').innerHTML = TABS.map(([v,l])=>{
+    const n = (v==='fav' ? S.fav.size : v==='trash' ? S.trash.size : '');
+    return `<button data-v="${v}" class="${S.view===v?'on':''}">${l}${n?`<span class="n">${n}</span>`:''}</button>`;
+  }).join('');
+  app.innerHTML = S.view==='home'?home() : S.view==='library'?library() : S.view==='teacher'?teacherView() : S.view==='culture'?cultureView() : S.view==='knowledge'?knowledgeView() : S.view==='trash'?trashView() : favView();
+  if(S.view==='home') startCS(); else clearInterval(S.timer);
+  window.scrollTo({top:0,behavior:'instant'});
+}
+function startCS(){
+  clearInterval(S.timer);
+  const cs = document.getElementById('cs'); if(!cs) return;
+  const sl = [...cs.querySelectorAll('.cs-slide')], dt = [...cs.querySelectorAll('.cs-dots button')];
+  if(sl.length<2) return;
+  let n = 0;
+  S.timer = setInterval(()=>{
+    sl[n].classList.remove('on'); dt[n].classList.remove('on');
+    n = (n+1)%sl.length;
+    sl[n].classList.add('on'); dt[n].classList.add('on');
+  }, 4300);
+}
+const modal = document.getElementById('modal'), lb = document.getElementById('lb');
+
+/* ---------- 备份 / 恢复 ---------- */
+function buildBackup(){
+  return { type:'grad-archive-backup', v:1, exportedAt:new Date().toISOString(),
+    data: window.ART_DATA, trash:[...S.trash], imgDel:[...S.imgDel] };
+}
+function dateStr(){ const d=new Date(); return d.getFullYear()+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0'); }
+function downloadBlob(blob, name){ const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(a.href), 1500); }
+function openBackup(){
+  const b = buildBackup(), txt = JSON.stringify(b, null, 2);
+  const nWorks = b.data.works.length, nImg = b.data.works.reduce((s,w)=>s+(w.imgs?w.imgs.length:0),0);
+  modal.innerHTML = `<div class="bk-wrap">
+    <div class="bk-card">
+      <h2>${svg('layers',19)} 数据备份与恢复</h2>
+      <p class="sub">随时导出当前全部作品数据（含已删除到回收站的作品、已删图片状态），改乱或误删后可一键恢复。</p>
+      <div class="bk-stat">${svg('book',14)} 当前共 ${nWorks} 件作品 · ${nImg} 张图 · 回收站 ${S.trash.size} · 已删图 ${S.imgDel.size}</div>
+      <div class="bk-sec">
+        <h3>① 导出备份</h3>
+        <p class="bk-hint">方式 A：复制下面的文本，粘贴保存到备忘录 / 微信文件传输助手。<br>方式 B：下载 .json 文件，或下载 <b>data.js</b> 直接替换原文件永久保存。</p>
+        <textarea id="bkOut" class="bk-ta" readonly>${esc(txt)}</textarea>
+        <div class="bk-row">
+          <button class="bk-act" onclick="backupCopy()">${svg('book',15)} 复制文本</button>
+          <button class="bk-act ghost" onclick="backupDownload()">${svg('down',15)} 下载 .json</button>
+          <button class="bk-act soft" onclick="backupDownloadDataJs()">${svg('down',15)} 下载 data.js（固化）</button>
+        </div>
+      </div>
+      <div class="bk-sec">
+        <h3>② 导入恢复</h3>
+        <p class="bk-hint">把之前复制的文本粘贴进来，或选择 .json 备份文件，即可恢复（恢复后本浏览器立即生效）。</p>
+        <textarea id="bkIn" class="bk-ta" placeholder="在此粘贴之前复制的备份文本…"></textarea>
+        <div class="bk-row">
+          <button class="bk-act" onclick="backupImportText()">${svg('restore',15)} 从文本恢复</button>
+          <label class="bk-act ghost" style="display:inline-flex;align-items:center;gap:6px">${svg('up',15)} 选择文件恢复<input type="file" accept=".json,application/json,.js" style="display:none" onchange="backupImportFile(event)"></label>
+        </div>
+        <div class="bk-row row2">
+          <button class="bk-act soft" onclick="backupClearOverride()">${svg('x',15)} 清除临时导入（用原 data.js）</button>
+        </div>
+      </div>
+      <div class="bk-sec">
+        <div class="bk-row"><button class="bk-act soft" data-close>${svg('x',15)} 关闭</button></div>
+        <p class="bk-hint">提示：导入的数据先临时存在本浏览器。要永久保存，请点「下载 data.js（固化）」替换原 data.js 文件，再点「清除临时导入」。</p>
+      </div>
+    </div>
+  </div>`;
+  modal.classList.add('on'); document.body.style.overflow='hidden'; modal.scrollTop=0;
+}
+function backupCopy(){ const ta=document.getElementById('bkOut'); if(!ta) return; ta.focus(); ta.select(); ta.setSelectionRange(0, ta.value.length);
+  const done=()=>alert('已复制备份文本，可粘贴到备忘录 / 微信保存。');
+  if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(ta.value).then(done).catch(()=>{try{document.execCommand('copy');done();}catch(e){alert('复制失败，请手动框选文本复制。');}}); }
+  else { try{document.execCommand('copy');done();}catch(e){alert('复制失败，请手动框选文本复制。');} }
+}
+function backupDownload(){ const b=buildBackup(); downloadBlob(new Blob([JSON.stringify(b,null,2)],{type:'application/json'}), 'archive-backup-'+dateStr()+'.json'); }
+function backupDownloadDataJs(){ const d=window.ART_DATA; downloadBlob(new Blob(['window.ART_DATA = '+JSON.stringify(d,null,2)+';\n'],{type:'text/javascript'}), 'data.js'); alert('已生成 data.js，用它替换原 data.js 文件即可永久保存当前数据。'); }
+function applyBackupText(t){
+  let obj; try{ obj=JSON.parse(t); }catch(err){ alert('解析失败：这不是有效的 JSON 备份文本。'); return; }
+  let data=obj, trash=[], imgDel=[];
+  if(obj&&obj.type==='grad-archive-backup'){ data=obj.data; trash=obj.trash||[]; imgDel=obj.imgDel||[]; }
+  if(!data||!Array.isArray(data.works)){ alert('备份格式不正确：缺少 works 作品数组。'); return; }
+  if(!confirm('将用此备份恢复数据（'+data.works.length+' 件作品）。当前未备份的改动会被覆盖。继续？')) return;
+  try{ localStorage.setItem('gradArchiveOverride', JSON.stringify({data,trash,imgDel})); }catch(e){ alert('保存失败：浏览器存储可能已满。'); return; }
+  alert('已恢复，正在重新加载…'); setTimeout(()=>location.reload(), 350);
+}
+function backupImportText(){ const ta=document.getElementById('bkIn'); if(ta) applyBackupText(ta.value); }
+function backupImportFile(e){ const f=e.target.files&&e.target.files[0]; if(!f) return; const r=new FileReader(); r.onload=()=>applyBackupText(r.result); r.readAsText(f); }
+function backupClearOverride(){ if(!confirm('清除临时导入，恢复使用原 data.js 文件（若已替换则为新文件）？')) return; localStorage.removeItem('gradArchiveOverride'); location.reload(); }
+
+function openW(id, slide=0){
+  const w = W.find(x=>x.id===id); if(!w) return;
+  S.open = id; S.slide = Math.max(0, Math.min(slide, w.imgs.length-1));
+  modal.innerHTML = detail(w); modal.classList.add('on');
+  document.body.style.overflow = 'hidden';
+  modal.scrollTop = 0;
+}
+function closeM(){
+  modal.classList.remove('on'); modal.innerHTML = ''; S.open = null;
+  document.body.style.overflow = '';
+}
+function openLB(i){
+  const w = W.find(x=>x.id===S.open); if(!w) return;
+  S.lb = true; S.lbIdx = i;
+  lb.innerHTML = `
+    <div class="lb-top">
+      ${svg('zoom',17)}
+      <span class="t">${esc(w.title)} · ${i+1}/${w.imgs.length}</span>
+      <div class="r">
+        <a class="lb-btn" href="${IM(w.imgs[i])}" download="${esc(w.title)}_${i+1}.jpg">${svg('down',16)} 下载这张</a>
+        ${w.imgs.length>1?`<button class="lb-btn" data-imgdel="${w.imgs[i]}">${svg('photodel',15,1.4)} 删除这张</button>`:''}
+        ${w.imgs.length>1?`<button class="lb-btn" data-dlall>${svg('down',16)} 下载全部</button>`:''}
+        <button class="lb-btn" data-lbclose>${svg('x',16)} 关闭</button>
+      </div>
+    </div>
+    <div class="lb-stage">
+      <img src="${IM(w.imgs[i])}" alt="">
+      ${w.imgs.length>1?`<button class="lb-arw l" data-lbpv>${svg('arrowL',20)}</button><button class="lb-arw r" data-lbnx>${svg('arrowR',20)}</button>`:''}
+    </div>
+    ${w.imgs.length>1?`<div class="lb-bottom">${w.imgs.map((im,n)=>`<img class="${n===i?'on':''}" data-lbn="${n}" src="${TH(im)}">`).join('')}</div>`:''}`;
+  lb.classList.add('on');
+}
+function closeLB(){ lb.classList.remove('on'); lb.innerHTML=''; S.lb=false; }
+
+function toggleFav(id){
+  if(S.fav.has(id)) S.fav.delete(id); else S.fav.add(id);
+  saveFav();
+  document.querySelectorAll(`.fav[data-fav="${id}"], .iconbtn[data-fav="${id}"]`).forEach(b=>{
+    const on = S.fav.has(id);
+    b.classList.toggle('on', on);
+    b.innerHTML = svg('heart',17,1.6,on?'currentColor':'none');
+    b.title = on ? '取消收藏' : '收藏';
+  });
+  updateTabCount();
+  if(S.view === 'library' || S.view === 'fav' || S.view === 'home') paint();
+}
+function updateTabCount(){
+  const tf = document.querySelector('#tabs button[data-v="fav"]');
+  if(tf) tf.innerHTML = `收藏${S.fav.size?`<span class="n">${S.fav.size}</span>`:''}`;
+  const tt = document.querySelector('#tabs button[data-v="trash"]');
+  if(tt) tt.innerHTML = `回收站${S.trash.size?`<span class="n">${S.trash.size}</span>`:''}`;
+}
+function deleteWork(id){
+  if(!confirm('确定把这件作品移入回收站？可在回收站恢复。')) return;
+  S.trash.add(id); saveTrash();
+  if(S.open === id) closeM();
+  updateTabCount(); paint();
+}
+function restoreWork(id){
+  S.trash.delete(id); saveTrash();
+  updateTabCount();
+  if(S.view === 'trash') paint();
+  else paint();
+}
+function emptyTrash(){
+  if(!confirm('清空回收站后无法恢复，确定？')) return;
+  S.trash.clear(); saveTrash(); updateTabCount(); paint();
+}
+function deleteImg(wid, im){
+  const w = W.find(x=>x.id===wid);
+  if(!w) return;
+  if(w.imgs.length<=1){ alert('至少要保留一张图片，不能全部删除。'); return; }
+  if(!confirm('确定删除这张图？可在回收站恢复。')) return;
+  S.imgDel.add(wid+':'+im); saveImgDel();
+  w.imgs = w._imgsAll.filter(x=>!S.imgDel.has(wid+':'+x));
+  if(S.slide >= w.imgs.length) S.slide = Math.max(0, w.imgs.length-1);
+  updateTabCount(); paint();
+  if(S.lb) closeLB();
+  if(S.open === wid) openW(wid, S.slide);
+}
+function restoreImg(key){
+  S.imgDel.delete(key); saveImgDel();
+  const ci = key.indexOf(':'), wid = key.slice(0,ci);
+  const w = W.find(x=>x.id===wid);
+  if(w) w.imgs = w._imgsAll.filter(x=>!S.imgDel.has(wid+':'+x));
+  updateTabCount();
+  if(S.view === 'trash' || S.open === wid) paint();
+  if(S.open === wid) openW(wid, S.slide);
+}
+function imgDelNames(){ return [...S.imgDel].map(k=>k.slice(k.indexOf(':')+1)); }
+function copyImgDelList(){
+  const names = imgDelNames(); if(!names.length){ alert('没有已删除的图片。'); return; }
+  const txt = names.join('\n');
+  const done=()=>alert('已复制 '+names.length+' 个已删图片文件名，请粘贴给 AI 进行文件清理。');
+  const fb=()=>alert('复制失败，请改用「下载清单」把 .txt 保存到项目文件夹后告知 AI。');
+  if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done).catch(()=>{try{const ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();done();}catch(e){fb();}}); }
+  else { try{const ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();done();}catch(e){fb();} }
+}
+function downloadImgDelList(){
+  const names = imgDelNames(); if(!names.length){ alert('没有已删除的图片。'); return; }
+  downloadBlob(new Blob([names.join('\n')],{type:'text/plain'}), 'deleted-images-'+dateStr()+'.txt');
+}
+function clearImgDel(){
+  if(!confirm('清除浏览器里这 '+S.imgDel.size+' 条已删图片记录？图片文件已从磁盘删除，清除后回收站不再显示这些条目（无法再恢复）。')) return;
+  S.imgDel.clear(); saveImgDel(); updateTabCount(); paint();
+}
+
+/* ---------- events ---------- */
+document.addEventListener('click', e=>{
+  const t = e.target;
+  const fav = t.closest('[data-fav]');
+  if(fav){ e.stopPropagation(); toggleFav(fav.dataset.fav); return; }
+  const del = t.closest('[data-del]');
+  if(del){ e.stopPropagation(); deleteWork(del.dataset.del); return; }
+  const restore = t.closest('[data-restore]');
+  if(restore){ e.stopPropagation(); restoreWork(restore.dataset.restore); return; }
+  const empty = t.closest('[data-empty-trash]');
+  if(empty){ emptyTrash(); return; }
+  const idel = t.closest('[data-imgdel]');
+  if(idel){ e.stopPropagation(); deleteImg(S.open, idel.dataset.imgdel); return; }
+  const irst = t.closest('[data-imgrestore]');
+  if(irst){ e.stopPropagation(); restoreImg(irst.dataset.imgrestore); return; }
+  const cdl = t.closest('[data-copydel]'); if(cdl){ copyImgDelList(); return; }
+  const ddl = t.closest('[data-downdel]'); if(ddl){ downloadImgDelList(); return; }
+  const cim = t.closest('[data-clearimgdel]'); if(cim){ clearImgDel(); return; }
+
+  if(t.closest('[data-lbclose]')){ closeLB(); return; }
+  if(lb.classList.contains('on')){
+    if(t.closest('[data-lbpv]')){ openLB((S.lbIdx - 1 + W.find(x=>x.id===S.open).imgs.length) % W.find(x=>x.id===S.open).imgs.length); return; }
+    if(t.closest('[data-lbnx]')){ const w=W.find(x=>x.id===S.open); openLB((S.lbIdx + 1) % w.imgs.length); return; }
+    if(t.closest('[data-dlall]')){ dlAll(W.find(x=>x.id===S.open)); return; }
+    const th = t.closest('[data-lbn]'); if(th){ openLB(+th.dataset.lbn); return; }
+    if(t === lb || t.closest('.lb-stage')){ if(!t.closest('img') && !t.closest('button') && !t.closest('a')) closeLB(); return; }
+    return;
+  }
+
+  if(t.closest('#bkBtn')){ openBackup(); return; }
+  const tab = t.closest('#tabs button');
+  if(tab){ S.view = tab.dataset.v; paint(); return; }
+  const go = t.closest('[data-go]');
+  if(go){ S.view = go.dataset.go; paint(); return; }
+
+  if(t.closest('[data-close]')){ closeM(); return; }
+  if(t.closest('[data-dlall]')){ dlAll(W.find(x=>x.id===S.open)); return; }
+  if(t.closest('[data-zoom]')){ openLB(S.slide); return; }
+  const pv = t.closest('[data-pv]'); if(pv){ const w=W.find(x=>x.id===S.open); openW(S.open,(S.slide-1+w.imgs.length)%w.imgs.length); return; }
+  const nx = t.closest('[data-nx]'); if(nx){ const w=W.find(x=>x.id===S.open); openW(S.open,(S.slide+1)%w.imgs.length); return; }
+  const st = t.closest('.strips img'); if(st){ openW(S.open, +st.dataset.n); return; }
+
+  const c = t.closest('.card'); if(c){ openW(c.dataset.id); return; }
+  const cs = t.closest('.cs-slide'); if(cs){ openW(cs.dataset.id, +cs.dataset.slide||0); return; }
+
+  const fmodeBtn = t.closest('[data-fmode]');
+  if(fmodeBtn){ S.fmode = fmodeBtn.dataset.fmode; paint(); return; }
+  const fremove = t.closest('[data-fremove]');
+  if(fremove){ const k=fremove.dataset.f, v=fremove.dataset.v, arr=S.f[k]; const i=arr.indexOf(v); if(i>=0) arr.splice(i,1); const y=window.scrollY; paint(); window.scrollTo(0,y); return; }
+  const ftoggle = t.closest('[data-ftoggle]');
+  if(ftoggle){ S.fexp = !S.fexp; const fEl=document.getElementById('filters'); if(fEl) fEl.classList.toggle('expanded', S.fexp); return; }
+  const fmask = t.closest('[data-fmask]');
+  if(fmask){ S.fexp = false; const fEl=document.getElementById('filters'); if(fEl) fEl.classList.remove('expanded'); return; }
+
+  const chip = t.closest('.chip');
+  if(chip){
+    const k = chip.dataset.f, v = chip.dataset.v, arr = S.f[k];
+    arr.includes(v) ? arr.splice(arr.indexOf(v),1) : arr.push(v);
+    S.view='library';
+    const y = window.scrollY;
+    paint(); window.scrollTo(0, y);
+    return;
+  }
+  const pill = t.closest('.pill');
+  if(pill){
+    if(pill.dataset.q){ S.q = pill.dataset.q; document.getElementById('q').value = S.q;
+      Object.keys(S.f).forEach(k=>S.f[k]=[]); S.view='library'; closeM(); paint(); }
+    else { S.f[pill.dataset.f] = [pill.dataset.v]; S.view='library'; closeM(); paint(); }
+    return;
+  }
+  if(t.closest('[data-reset]')){ Object.keys(S.f).forEach(k=>S.f[k]=[]); S.q=''; document.getElementById('q').value=''; paint(); return; }
+  const dt = t.closest('.cs-dots button');
+  if(dt){
+    const cs = document.getElementById('cs');
+    cs.querySelectorAll('.cs-slide').forEach(s=>s.classList.remove('on'));
+    cs.querySelectorAll('.cs-dots button').forEach(b=>b.classList.remove('on'));
+    cs.querySelector(`.cs-slide[data-n="${dt.dataset.n}"]`).classList.add('on');
+    dt.classList.add('on'); clearInterval(S.timer); startCS(); return;
+  }
+}, false);
+
+function dlAll(w){
+  if(!w) return;
+  w.imgs.forEach((im,n)=>{
+    const a = document.createElement('a');
+    a.href = IM(im); a.download = `${w.title}_${n+1}.jpg`;
+    document.body.appendChild(a); a.click(); a.remove();
+  });
+}
+
+let tm;
+document.getElementById('q').addEventListener('input', e=>{
+  clearTimeout(tm);
+  tm = setTimeout(()=>{ S.q = e.target.value.trim(); if(S.view==='home'||S.view==='fav'||S.view==='knowledge') S.view='library'; paint(); }, 180);
+});
+document.addEventListener('keydown', e=>{
+  if(e.key === '/' && document.activeElement.tagName !== 'INPUT'){ e.preventDefault(); document.getElementById('q').focus(); }
+  if(e.key === 'Escape'){ if(lb.classList.contains('on')) closeLB(); else closeM(); }
+  if(S.lb && e.key === 'ArrowLeft'){ const w=W.find(x=>x.id===S.open); openLB((S.lbIdx-1+w.imgs.length)%w.imgs.length); }
+  if(S.lb && e.key === 'ArrowRight'){ const w=W.find(x=>x.id===S.open); openLB((S.lbIdx+1)%w.imgs.length); }
+  if(S.open && !S.lb && e.key === 'ArrowLeft'){ const w=W.find(x=>x.id===S.open); openW(S.open,(S.slide-1+w.imgs.length)%w.imgs.length); }
+  if(S.open && !S.lb && e.key === 'ArrowRight'){ const w=W.find(x=>x.id===S.open); openW(S.open,(S.slide+1)%w.imgs.length); }
+});
+paint();
+</script>
+</body>
+</html>
