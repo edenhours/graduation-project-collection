@@ -1,0 +1,9 @@
+raw6a tokens, images: 229
+parsed works (after dedup): 40
+downloaded cand6a: 229
+start id a59 (max existing a116)
+new entries: 40 skipped(no img): 0
+written works_a.json; sample:
+  a59 Brezze | 张文慧 | 磨炼 | imgs 6
+  a60 Cup in Cup | 朱喆 | 磨炼 | imgs 6
+  a61 Pie vase | 林雨昕 | 磨炼 | imgs 5

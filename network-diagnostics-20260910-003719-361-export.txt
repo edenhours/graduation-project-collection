@@ -1,0 +1,53 @@
+WorkBuddy Network Diagnostics Report
+==================================
+Generated At: 2026/9/10 00:37:19
+Report Directory: C:\Users\23515\.workbuddy\logs\network
+Report File: network-diagnostics-20260910-003719-361.txt
+Report File Path: C:\Users\23515\.workbuddy\logs\network\network-diagnostics-20260910-003719-361.txt
+
+Overall Status: warning
+Overall Summary: overall-warning
+
+[Target]
+Endpoint: https://copilot.tencent.com
+Base Endpoint: https://copilot.tencent.com
+Target Host: copilot.tencent.com:443
+Protocol: https
+Prefix Path: /plugin
+Platform: workbuddy
+Proxy Mode: No Proxy
+Proxy URL: N/A
+Hosts File: C:\Windows\System32\drivers\etc\hosts
+
+[Checks]
+- Proxy Detection
+  Status: success
+  Summary: proxy-env-none-configured
+  Value: No Proxy
+
+- Hosts Resolution
+  Status: success
+  Summary: no-hosts-dns-ok
+  Value: No explicit hosts entry
+  Detail: Hosts: No explicit hosts entry | Resolved: 124.225.27.84, 171.108.209.133, 27.159.69.232, 175.12.123.102, 113.240.66.204, 121.204.231.62, 171.108.214.190, 171.108.213.42, 124.72.128.203
+
+- Service Connectivity
+  Status: success
+  Summary: service-reachable
+  Value: HTTP OK
+  Duration: 788 ms
+  Detail: Endpoint: https://copilot.tencent.com
+
+- TCP Connection Latency
+  Status: success
+  Summary: tcp-connected
+  Value: copilot.tencent.com:443
+  Duration: 179 ms
+
+- Packet Loss
+  Status: warning
+  Summary: packet-loss-detected
+  Value: 5% loss
+  Duration: 26087 ms
+  Detail: Sent: 18 · Received: 17
+  Error Type: packet-loss-detected
